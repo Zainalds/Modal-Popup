@@ -1,0 +1,39 @@
+﻿@model Triton.CRM.Models.CustomerSearchModel
+
+<!-- Edit Card Modal -->
+@using (Html.BeginForm("Delete", "Customer", FormMethod.Post))
+{
+            <div class="modal-body" >
+                <form>
+                    <!-- Form Group -->
+                    <div class="form-group">
+                        <label for="editCardNameLabel" class="input-label">Name</label>
+                        @Html.TextBoxFor(x => x.CustomerAdditionalContacts.Name, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group">
+                        <label for="editCardNameLabel" class="input-label">Email</label>
+                        @Html.TextBoxFor(x => x.CustomerAdditionalContacts.Email, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group">
+                        <label for="editCardNameLabel" class="input-label">Position</label>
+                        @Html.TextBoxFor(x => x.CustomerAdditionalContacts.Position, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group">
+                        <label for="editCardNameLabel" class="input-label">Tel</label>
+                        @Html.TextBoxFor(x => x.CustomerAdditionalContacts.Tel, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group">
+                        <label for="editCardNameLabel" class="input-label">Cell</label>
+                        @Html.TextBoxFor(x => x.CustomerAdditionalContacts.Cell, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    @Html.HiddenFor(x => x.CustomerAdditionalContacts.CustomerAdditionalContactID, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.HiddenFor(x => x.CustomerAdditionalContacts.CustomerID, new { @class = "form-control", @readonly = "readonly" })
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-white mr-2" data-dismiss="modal">Cancel</button>
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+            <!-- End Body -->
+<!-- End Edit Card Modal -->
+}
